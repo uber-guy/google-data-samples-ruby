@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>get_version_string (SpreadsheetExamples)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File SpreadsheetExamples.rb, line 141</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_version_string</span>(<span class="ruby-identifier">uri</span>)
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">get_feed</span>(<span class="ruby-identifier">uri</span>)
+    <span class="ruby-identifier">xml</span> = <span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+    <span class="ruby-comment cmt"># use XPath to strip the href attribute of the first link whose</span>
+    <span class="ruby-comment cmt"># 'rel' attribute is set to edit</span>
+    <span class="ruby-identifier">edit_link</span> = <span class="ruby-constant">REXML</span><span class="ruby-operator">::</span><span class="ruby-constant">XPath</span>.<span class="ruby-identifier">first</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-value str">'//[@rel=&quot;edit&quot;]'</span>)
+    <span class="ruby-identifier">edit_link_href</span> = <span class="ruby-identifier">edit_link</span>.<span class="ruby-identifier">attribute</span>(<span class="ruby-value str">'href'</span>).<span class="ruby-identifier">to_s</span>
+    <span class="ruby-comment cmt"># return the version string at the end of the link's href attribute</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">edit_link_href</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\//</span>)[<span class="ruby-value">10</span>]
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>
