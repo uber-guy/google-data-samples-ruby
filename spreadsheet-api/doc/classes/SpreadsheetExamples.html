@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: SpreadsheetExamples</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">SpreadsheetExamples</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/SpreadsheetExamples_rb.html">
+                SpreadsheetExamples.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Contains all the methods listed in the &#8216;Using Ruby with the Google
+Data API&#8217;s article&#8217;.
+</p>
+<p>
+Performs authentication via ClientLogin, feed retrieval, post and batch
+update requests.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000001">authenticate</a>&nbsp;&nbsp;
+      <a href="#M000009">batch_update</a>&nbsp;&nbsp;
+      <a href="#M000004">create_datastructure_from_xml</a>&nbsp;&nbsp;
+      <a href="#M000003">get_feed</a>&nbsp;&nbsp;
+      <a href="#M000005">get_my_spreadsheets</a>&nbsp;&nbsp;
+      <a href="#M000008">get_version_string</a>&nbsp;&nbsp;
+      <a href="#M000006">get_worksheet</a>&nbsp;&nbsp;
+      <a href="#M000007">post</a>&nbsp;&nbsp;
+      <a href="#M000002">set_header_content_type_to_xml</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SPREADSHEET_FEED</td>
+          <td>=</td>
+          <td class="context-item-value">\       'http://spreadsheets.google.com/feeds/spreadsheets/private/full'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CONTENT_TYPE_FORM</td>
+          <td>=</td>
+          <td class="context-item-value">'application/x-www-form-urlencoded'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CONTENT_TYPE_ATOMXML</td>
+          <td>=</td>
+          <td class="context-item-value">'application/atom+xml'</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">headers</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000001" class="method-detail">
+        <a name="M000001"></a>
+
+        <div class="method-heading">
+          <a href="SpreadsheetExamples.src/M000001.html" target="Code" class="method-signature"
+            onclick="popupCode('SpreadsheetExamples.src/M000001.html');return false;">
+          <span class="method-name">authenticate</span><span class="method-args">(email, password)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Authenticate with ClientLogin
+</p>
+<p>
+Args:
+</p>
+<pre>
+  email: string
+  password: string
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="SpreadsheetExamples.src/M000009.html" target="Code" class="method-signature"
+            onclick="popupCode('SpreadsheetExamples.src/M000009.html');return false;">
+          <span class="method-name">batch_update</span><span class="method-args">(batch_data, cellfeed_uri)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Perform a batch update using the cellsfeed of a specific spreadsheet
+</p>
+<p>
+Args:
+</p>
+<pre>
+  batch_data: array of hashes of data to post
+              sample hash: +batch_id+: string (i.e. &quot;A&quot;)
+                           +cell_id+: string (i.e. &quot;R1C1&quot;)
+                           +data+: string (i.e. &quot;My data&quot;)
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  Net::HTTPResponse
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="SpreadsheetExamples.src/M000004.html" target="Code" class="method-signature"
+            onclick="popupCode('SpreadsheetExamples.src/M000004.html');return false;">
+          <span class="method-name">create_datastructure_from_xml</span><span class="method-args">(xml)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Parse xml into a datastructure using xmlsimple
+</p>
+<p>
+Args:
+</p>
+<pre>
+  xml: string
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  A hash containing the xml data provided in the argument
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="SpreadsheetExamples.src/M000003.html" target="Code" class="method-signature"
+            onclick="popupCode('SpreadsheetExamples.src/M000003.html');return false;">
+          <span class="method-name">get_feed</span><span class="method-args">(uri)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Perform a GET request to a given uri
+</p>
+<p>
+Args:
+</p>
+<pre>
+  uri: string
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  Net::HTTPResponse
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="SpreadsheetExamples.src/M000005.html" target="Code" class="method-signature"
+            onclick="popupCode('SpreadsheetExamples.src/M000005.html');return false;">
+          <span class="method-name">get_my_spreadsheets</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get spreadsheet feed for currently authenticated user
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="SpreadsheetExamples.src/M000008.html" target="Code" class="method-signature"
+            onclick="popupCode('SpreadsheetExamples.src/M000008.html');return false;">
+          <span class="method-name">get_version_string</span><span class="method-args">(uri)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Obtain the version string for a specific cell
+</p>
+<p>
+Args:
+</p>
+<pre>
+  uri: string
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  A string containing the version string
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="SpreadsheetExamples.src/M000006.html" target="Code" class="method-signature"
+            onclick="popupCode('SpreadsheetExamples.src/M000006.html');return false;">
+          <span class="method-name">get_worksheet</span><span class="method-args">(spreadsheet_key)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get the worksheets feed for a given spreadsheet
+</p>
+<p>
+Args:
+</p>
+<pre>
+  spreadsheet_key: string
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  Net::HTTPResponse: The worksheet feed
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="SpreadsheetExamples.src/M000007.html" target="Code" class="method-signature"
+            onclick="popupCode('SpreadsheetExamples.src/M000007.html');return false;">
+          <span class="method-name">post</span><span class="method-args">(uri, data)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Post data to a specific uri
+</p>
+<p>
+Args:
+</p>
+<pre>
+  uri: string
+  data: string (typically xml)
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  Net::HTTPResponse
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+          <a href="SpreadsheetExamples.src/M000002.html" target="Code" class="method-signature"
+            onclick="popupCode('SpreadsheetExamples.src/M000002.html');return false;">
+          <span class="method-name">set_header_content_type_to_xml</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set &#8216;Content-Type&#8217; header to &#8216;application/atom+xml&#8217;
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
