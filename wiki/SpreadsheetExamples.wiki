@@ -28,7 +28,7 @@ Performs authentication via ClientLogin, feed retrieval, post and batch update r
  * CONTENT_TYPE_ATOMXML = 'application/atom+xml'
 
 == Attributes ==
-headers [R]
+headers R
 
 == Public Instance methods ==
 {{{
