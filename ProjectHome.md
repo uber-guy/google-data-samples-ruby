@@ -1,0 +1,1 @@
+Samples for the Google Data APIs using Ruby.
